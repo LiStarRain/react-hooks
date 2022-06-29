@@ -1,0 +1,22 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        // 使用宽松模式
+        "loose": true,
+        // 使用commonjs
+        "modules": false
+      }
+    ],
+    "@babel/react"
+  ],
+  // 编译js
+  "include": "**/*.js",
+  // 排除ts
+  "exclude": "**/*.ts",
+  // 使用async语法糖异步函数转换插件
+  "plugins": ["babel-plugin-transform-async-to-promises"],
+  // 去除注释
+  "comments": false
+}
