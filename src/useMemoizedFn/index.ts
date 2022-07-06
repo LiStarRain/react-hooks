@@ -21,6 +21,8 @@ function useMemoizedFn<T extends noop>(fn: T) {
 
   // 传入的回调函数更新时，需要更新ref上缓存的函数，保证函数始终能引用到外层最新的作用域
   // 其实这个时候由于外部每次渲染都会生成新的回调函数fn，因此这里其实是依赖外部变化而变化的
+  // why not write `fnRef.current = fn`?
+  // https://github.com/alibaba/hooks/issues/728
   fnRef.current = useMemo(() => fn, [fn]);
 
   // 初始化缓存函数的容器
