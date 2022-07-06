@@ -1,6 +1,6 @@
 import type { DependencyList } from 'react';
 import { useRef } from 'react';
-import depsAreSame from '../utils/depsAreSame';
+import { depsAreSame } from '../utils';
 
 /**
  * @description 根据依赖项计算回调函数的返回值，用于替代`useMemo`或`useRef`

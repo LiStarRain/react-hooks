@@ -4,7 +4,8 @@
   "description": "big big fish, day day up!",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "npm run test && gulp"
   },
   "keywords": [
     "react hooks"
@@ -36,5 +37,8 @@
     "ts-jest": "^28.0.3",
     "typescript": "^4.6.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@types/js-cookie": "^2.x.x",
+    "js-cookie": "^2.x.x"
+  }
 }

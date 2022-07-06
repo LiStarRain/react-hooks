@@ -1,6 +1,7 @@
 const { src, dest, series } = require('gulp');
 const babel = require('gulp-babel');
 const ts = require('gulp-typescript');
+const uglify = require('gulp-uglify');
 const del = require('del');
 
 // 清除文件
@@ -19,6 +20,7 @@ function cjs() {
     .src()
     .pipe(tsProject())
     .pipe(babel({ configFile: './.babelrc' }))
+    .pipe(uglify())
     .pipe(dest('lib/'));
 }
 
@@ -31,6 +33,7 @@ function es() {
     .src()
     .pipe(tsProject())
     .pipe(babel({ configFile: './.babelrc' }))
+    .pipe(uglify())
     .pipe(dest('es/'));
 }
 

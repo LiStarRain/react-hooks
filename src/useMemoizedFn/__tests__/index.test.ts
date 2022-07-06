@@ -19,7 +19,7 @@ describe('useMemoized', () => {
     expect(useMemoizedFn).toBeDefined();
   });
 
-  it('useMemoizedFn should work', () => {
+  it(' should work', () => {
     const hook = renderHook(() => useCount());
     const currentFn = hook.result.current.memoizedFn;
     expect(hook.result.current.memoizedFn()).toEqual(0);
