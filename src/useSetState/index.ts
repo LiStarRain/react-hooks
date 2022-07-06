@@ -6,8 +6,8 @@ export type SetState<S extends Record<string, any>> = <K extends keyof S>(
 ) => void;
 
 /**
- * @author lixingyu
  * @description 管理object类型的state
+ * @author lixingyu
  */
 function useSetState<S extends Record<string, any>>(initialState: S | (() => S)): [S, SetState<S>] {
   const [state, setState] = useState<S>(initialState);

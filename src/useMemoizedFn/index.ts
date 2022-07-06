@@ -16,7 +16,7 @@ function useMemoizedFn<T extends noop>(fn: T) {
     }
   }
 
-  // 存储函数，useRef只会在开始渲染时执行一次，可以利用该特性在多次渲染过程中共享数据
+  // 存储函数，useRef只会在第一次执行时初始化一次，可以利用该特性在多次渲染过程中共享数据
   const fnRef = useRef<T>(fn);
 
   // 传入的回调函数更新时，需要更新ref上缓存的函数，保证函数始终能引用到外层最新的作用域
