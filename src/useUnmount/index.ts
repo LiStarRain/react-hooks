@@ -3,6 +3,7 @@ import useLatest from '../useLatest';
 
 /**
  * @description 在组件卸载时执行的hook
+ * @author lixingyu
  */
 export default function useUnmount(fn: () => void) {
   if (process.env.NODE_ENV === 'development') {
