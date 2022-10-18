@@ -8,4 +8,5 @@ module.exports = {
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['es/', 'lib/'],
   collectCoverage: true,
+  root: './src',
 };
