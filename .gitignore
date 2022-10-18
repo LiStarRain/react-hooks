@@ -2,3 +2,4 @@ node_modules
 coverage
 es
 lib
+.DS_Store
