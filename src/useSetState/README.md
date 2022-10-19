@@ -1,6 +1,6 @@
 ## useSetState
 
-> 管理`object`类型的hook，用法与类组件的`this.setState`方法基本一致。
+管理`object`类型的 hook，用法与类组件的`this.setState`方法基本一致。
 
 ### 代码演示
 
@@ -44,6 +44,19 @@ const [state, setState] = useSetState<S extends Record<string, any>>(
   initialState: S | (() => S)
 ): [S, (patch: null | Partial<T> | ((prevState: T) => Partial<T> | null)) => void]
 ```
+
+### Params
+
+| 参数         | 说明     | 类型            | 默认值 |
+| ------------ | -------- | --------------- | ------ |
+| initialState | 初始状态 | `S | (() => S)` | -      |
+
+### Result
+
+| 参数     | 说明           | 类型                                                         | 默认值 |
+| -------- | -------------- | ------------------------------------------------------------ | ------ |
+| state    | 当前状态值     | `S`                                                          | -      |
+| setState | 更新状态的函数 | `(state: Partial<S> | null | ((prevState: Readonly<S>) => Partial<S> | null)) => void` | -      |
 
 ### 源码
 

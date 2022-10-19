@@ -2,8 +2,8 @@ import { useCallback, useState } from 'react';
 import { isFunction } from '../utils';
 
 // 更新状态的setState函数类型约束
-export type SetState<S extends Record<string, any>> = <K extends keyof S>(
-  state: Pick<S, K> | null | ((prevState: Readonly<S>) => Pick<S, K> | S | null),
+export type SetState<S extends Record<string, any>> = (
+  state: Partial<S> | null | ((prevState: Readonly<S>) => Partial<S> | null),
 ) => void;
 
 /**
@@ -27,5 +27,4 @@ function useSetState<S extends Record<string, any>>(initialState: S | (() => S))
 
   return [state, setMergeState];
 }
-
 export default useSetState;
